@@ -1,0 +1,73 @@
+/* Estructura del body con bordes rojos y fondo blanco */
+body {
+    display: grid;
+    grid-template-columns: 10px 1fr 10px; /* Bordes rojos a los lados */
+    background-color: white; /* Fondo blanco global */
+    height: 100vh;
+    margin: 0;
+}
+
+/* Bordes laterales en rojo */
+body::before,
+body::after {
+    content: '';
+    background-color: red; /* Bordes laterales rojos */
+}
+
+body::before {
+    grid-column: 1 / 2; /* Lado izquierdo */
+}
+
+body::after {
+    grid-column: 3 / 4; /* Lado derecho */
+}
+
+/* Parte central con fondo negro */
+header, main, footer {
+    grid-column: 2 / 3; /* Centro */
+    background-color: black; /* Fondo negro en el centro */
+    color: white; /* Texto en blanco */
+    padding: 15px;
+}
+
+/* Estilos de la tabla con bordes rojos */
+table {
+    border-collapse: collapse;
+    width: 100%; /* Tabla ocupa todo el ancho disponible */
+}
+
+th, td {
+    border: 2px solid red; /* Bordes rojos */
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2; /* Fondo gris claro para encabezados */
+}
+
+nav ul li a {
+    color: white; /* Enlaces en blanco */
+}
+
+/* Imágenes centradas */
+section img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Galería de imágenes */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+    grid-gap: 10px;
+    padding: 20px;
+}
+
+.gallery-container img {
+    width: 70%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
